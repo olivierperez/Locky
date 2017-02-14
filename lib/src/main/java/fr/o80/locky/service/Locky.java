@@ -6,8 +6,8 @@ import android.content.Intent;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
-import fr.o80.locky.presentation.EnrolmentActivity;
-import fr.o80.locky.presentation.UnlockActivity;
+import fr.o80.locky.enrolment.ui.EnrolmentActivity;
+import fr.o80.locky.unlock.UnlockActivity;
 
 /**
  * @author Olivier Perez

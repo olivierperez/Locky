@@ -25,4 +25,8 @@ public final class LockyConf {
     public static Locky getInstance() {
         return component.locky();
     }
+
+    public static LockyComponent component() {
+        return component;
+    }
 }

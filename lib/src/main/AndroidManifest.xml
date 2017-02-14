@@ -6,8 +6,8 @@
         android:allowBackup="true"
         android:label="@string/app_name"
         android:supportsRtl="true">
-        <activity android:name=".presentation.UnlockActivity"></activity>
-        <activity android:name=".presentation.EnrolmentActivity"></activity>
+        <activity android:name=".unlock.UnlockActivity"></activity>
+        <activity android:name=".enrolment.ui.EnrolmentActivity"></activity>
     </application>
 
 </manifest>

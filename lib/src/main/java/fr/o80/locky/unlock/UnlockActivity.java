@@ -1,4 +1,4 @@
-package fr.o80.locky.presentation;
+package fr.o80.locky.unlock;
 
 import android.content.Context;
 import android.content.Intent;
