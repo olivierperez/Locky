@@ -1,0 +1,35 @@
+image: jacekmarchwicki/android
+
+stages:
+  - build
+  - checkstyle
+  - lint
+  - unittest
+
+before_script:
+  - chmod +x gradlew
+  - echo $ANDROID_HOME
+  - export JAVA_HOME=$JAVA_HOME
+  - echo $JAVA_HOME
+
+Compile:
+  stage: build
+  script:
+    - ./gradlew :app:assembleRelease
+
+checkstyle:
+  stage: checkstyle
+  script:
+    - ./gradlew :lib:checkstyle
+
+Lint:
+  stage: lint
+  script:
+    - ./gradlew :lib:lint
+
+Unit Test:
+  stage: unittest
+  script:
+    - ./gradlew :lib:testReleaseUnitTest
+  dependencies:
+    - Compile
