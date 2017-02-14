@@ -1,0 +1,44 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            debuggable true
+        }
+    }
+}
+
+dependencies {
+    final SUPPORT_LIBRARY_VERSION = '25.1.1'
+    final BUTTERKNIFE_VERSION = '8.5.1'
+    final DAGGER_VERSION = '2.9'
+
+    // Support
+    compile "com.android.support:appcompat-v7:$SUPPORT_LIBRARY_VERSION"
+    compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha9'
+
+    // UI
+    compile "com.jakewharton:butterknife:$BUTTERKNIFE_VERSION"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$BUTTERKNIFE_VERSION"
+
+    testCompile 'junit:junit:4.12'
+
+    // Dependency injection
+    compile "com.google.dagger:dagger:$DAGGER_VERSION"
+    annotationProcessor "com.google.dagger:dagger-compiler:$DAGGER_VERSION"
+    provided 'javax.annotation:jsr250-api:1.0'
+}
