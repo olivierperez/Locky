@@ -4,18 +4,17 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.EditText;
 
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 import fr.o80.locky.R;
+import fr.o80.locky.R2;
 import fr.o80.locky.service.LockyConf;
 
 public class UnlockActivity extends AppCompatActivity {
 
     public static final int RESULT_UNLOCKED = 0;
     public static final int RESULT_LOCKED = 1;
-
-    private EditText password;
 
     public static Intent newInstance(Context context) {
         return new Intent(context, UnlockActivity.class);
@@ -25,21 +24,11 @@ public class UnlockActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pad);
-
-        password = (EditText) findViewById(R.id.pad_password);
-
-        findViewById(R.id.pad_validate)
-                .setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        if ("0000".equals(password.getText().toString())) {
-                            confirmed();
-                        }
-                    }
-                });
+        ButterKnife.bind(this);
     }
 
-    private void confirmed() {
+    @OnClick(R2.id.pad_ok)
+    public void onOK() {
         LockyConf.getInstance().setLocked(false);
         setResult(RESULT_UNLOCKED);
         finish();
