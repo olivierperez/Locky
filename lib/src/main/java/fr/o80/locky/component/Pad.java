@@ -7,9 +7,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import java.lang.ref.WeakReference;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import fr.o80.locky.R;
@@ -26,6 +28,9 @@ public class Pad extends LinearLayout {
     private WeakReference<PadListener> listener;
 
     private StringBuilder password = new StringBuilder();
+
+    @BindView(R2.id.pad_password)
+    protected TextView passwordTextView;
 
     public Pad(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -48,6 +53,23 @@ public class Pad extends LinearLayout {
     protected void onPadN(View v) {
         String key = ((Button) v).getText().toString();
         password.append(key);
+        updateTextField();
+    }
+
+    private void updateTextField() {
+        StringBuilder sb = new StringBuilder(password.length());
+        for (int i = 0; i < password.length(); i++) {
+            sb.append("*");
+        }
+        passwordTextView.setText(sb.toString());
+    }
+
+    @OnClick(R2.id.pad_clear)
+    protected void onClear() {
+        if (password.length() > 0) {
+            password.deleteCharAt(password.length() - 1);
+        }
+        updateTextField();
     }
 
     @OnClick(R2.id.pad_ok)
@@ -58,11 +80,9 @@ public class Pad extends LinearLayout {
         }
     }
 
-    @OnClick(R2.id.pad_clear)
-    protected void onClear() {
-        if (password.length() > 0) {
-            password.deleteCharAt(password.length() - 1);
-        }
+    public void clear() {
+        password.delete(0, password.length());
+        updateTextField();
     }
 
     public interface PadListener {

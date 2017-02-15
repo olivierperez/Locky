@@ -28,4 +28,10 @@ public class LPref {
     public boolean isEnrolled() {
         return prefs.contains(KEY_PASSWORD);
     }
+
+    public void setPassword(String password) {
+        prefs.edit()
+                .putString(KEY_PASSWORD, password)
+                .apply();
+    }
 }

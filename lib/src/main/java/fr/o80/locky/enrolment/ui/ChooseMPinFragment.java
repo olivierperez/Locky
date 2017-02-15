@@ -51,4 +51,13 @@ public class ChooseMPinFragment extends BaseFragment implements ChooseMPinView {
         pad.setListener(presenter);
     }
 
+    @Override
+    public void clear() {
+        pad.clear();
+    }
+
+    @Override
+    public void confirm() {
+
+    }
 }

@@ -39,4 +39,9 @@ public class Locky {
     public void setLocked(boolean locked) {
         this.locked = locked;
     }
+
+    public void setPassword(String password) {
+        pref.setPassword(password);
+        setLocked(false);
+    }
 }
