@@ -36,12 +36,12 @@ public abstract class BaseFragment extends Fragment implements PresenterView {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        presenter().attach(this);
+        getPresenter().attach(this);
     }
 
     @Override
     public void onDestroy() {
-        presenter().detach();
+        getPresenter().detach();
         super.onDestroy();
     }
 
@@ -54,12 +54,12 @@ public abstract class BaseFragment extends Fragment implements PresenterView {
             InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
             imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
         }
-        presenter().detach();
+        getPresenter().detach();
     }
 
     protected abstract void inject();
 
     protected abstract int layoutId();
 
-    protected abstract Presenter presenter();
+    protected abstract Presenter getPresenter();
 }

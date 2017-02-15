@@ -4,6 +4,7 @@ apply plugin: 'com.jakewharton.butterknife'
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
+    publishNonDefault true
 
     defaultConfig {
         minSdkVersion 15
@@ -15,9 +16,11 @@ android {
     buildTypes {
         release {
             minifyEnabled false
+            debuggable false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         debug {
+            minifyEnabled false
             debuggable true
         }
     }
@@ -34,6 +37,7 @@ dependencies {
 
     // UI
     compile "com.jakewharton:butterknife:$BUTTERKNIFE_VERSION"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$BUTTERKNIFE_VERSION"
 
     testCompile 'junit:junit:4.12'
 

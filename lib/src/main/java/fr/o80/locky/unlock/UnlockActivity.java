@@ -11,7 +11,7 @@ import fr.o80.locky.R;
 import fr.o80.locky.R2;
 import fr.o80.locky.service.LockyConf;
 
-public class UnlockActivity extends AppCompatActivity {
+public class UnlockActivity extends AppCompatActivity  {
 
     public static final int RESULT_UNLOCKED = 0;
     public static final int RESULT_LOCKED = 1;
