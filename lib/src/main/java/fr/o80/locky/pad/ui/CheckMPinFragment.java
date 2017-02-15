@@ -2,7 +2,6 @@ package fr.o80.locky.pad.ui;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.View;
 
 import javax.inject.Inject;
@@ -55,6 +54,6 @@ public class CheckMPinFragment extends BaseFragment implements CheckMPinView {
 
     @Override
     public void confirm() {
-        Log.d("CheckMPinFragment", "Confirmed");
+        ((PadActivity)getActivity()).confirmCheck();
     }
 }

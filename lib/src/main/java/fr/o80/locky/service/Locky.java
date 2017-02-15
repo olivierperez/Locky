@@ -31,16 +31,20 @@ public class Locky {
         return PadActivity.newInstance(context, pref.isEnrolled());
     }
 
-    public void setLocked(boolean locked) {
-        this.locked = locked;
+    public void unlock() {
+        this.locked = false;
     }
 
     public void setPassword(String password) {
         pref.setPassword(password);
-        setLocked(false);
+        unlock();
     }
 
     public boolean check(String password) {
-        return password != null && password.equals(pref.getPassword());
+        boolean checked = password != null && password.equals(pref.getPassword());
+        if (checked) {
+            unlock();
+        }
+        return checked;
     }
 }

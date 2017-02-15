@@ -2,7 +2,6 @@ package fr.o80.locky.pad.ui;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.View;
 
 import javax.inject.Inject;
@@ -59,6 +58,6 @@ public class ChooseMPinFragment extends BaseFragment implements ChooseMPinView {
 
     @Override
     public void confirm() {
-        Log.d("ChooseMPinFragment", "Confirmed");
+        ((PadActivity)getActivity()).confirmEnrolment();
     }
 }

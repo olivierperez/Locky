@@ -11,6 +11,9 @@ import fr.o80.locky.dagger.LockyModule;
  */
 public final class LockyConf {
 
+    public static final int RESULT_ENROLLED = 1;
+    public static final int RESULT_CHECK = 2;
+
     private static LockyComponent component;
 
     public static void init(Context context) {
