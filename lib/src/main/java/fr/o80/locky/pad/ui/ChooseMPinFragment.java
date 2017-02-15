@@ -1,7 +1,8 @@
-package fr.o80.locky.enrolment.ui;
+package fr.o80.locky.pad.ui;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.View;
 
 import javax.inject.Inject;
@@ -11,8 +12,8 @@ import fr.o80.locky.R;
 import fr.o80.locky.R2;
 import fr.o80.locky.base.BaseFragment;
 import fr.o80.locky.component.Pad;
-import fr.o80.locky.enrolment.presenter.ChooseMPinPresenter;
-import fr.o80.locky.enrolment.presenter.ChooseMPinView;
+import fr.o80.locky.pad.presenter.ChooseMPinPresenter;
+import fr.o80.locky.pad.presenter.ChooseMPinView;
 import fr.o80.locky.service.LockyConf;
 
 /**
@@ -37,7 +38,7 @@ public class ChooseMPinFragment extends BaseFragment implements ChooseMPinView {
 
     @Override
     protected int layoutId() {
-        return R.layout.fragment_enrolment;
+        return R.layout.fragment_pad;
     }
 
     @Override
@@ -58,6 +59,6 @@ public class ChooseMPinFragment extends BaseFragment implements ChooseMPinView {
 
     @Override
     public void confirm() {
-
+        Log.d("ChooseMPinFragment", "Confirmed");
     }
 }

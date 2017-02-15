@@ -6,8 +6,7 @@ import android.content.Intent;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
-import fr.o80.locky.enrolment.ui.EnrolmentActivity;
-import fr.o80.locky.unlock.UnlockActivity;
+import fr.o80.locky.pad.ui.PadActivity;
 
 /**
  * @author Olivier Perez
@@ -29,11 +28,7 @@ public class Locky {
     }
 
     public Intent lockActivity(Context context) {
-        if (pref.isEnrolled()) {
-            return UnlockActivity.newInstance(context);
-        } else {
-            return EnrolmentActivity.newInstance(context);
-        }
+        return PadActivity.newInstance(context, pref.isEnrolled());
     }
 
     public void setLocked(boolean locked) {
@@ -43,5 +38,9 @@ public class Locky {
     public void setPassword(String password) {
         pref.setPassword(password);
         setLocked(false);
+    }
+
+    public boolean check(String password) {
+        return password != null && password.equals(pref.getPassword());
     }
 }

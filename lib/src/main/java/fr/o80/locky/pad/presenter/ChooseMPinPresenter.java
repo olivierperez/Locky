@@ -1,4 +1,4 @@
-package fr.o80.locky.enrolment.presenter;
+package fr.o80.locky.pad.presenter;
 
 import android.util.Log;
 
@@ -11,7 +11,7 @@ import fr.o80.locky.service.LockyConf;
 /**
  * @author Olivier Perez
  */
-public class ChooseMPinPresenter extends Presenter implements Pad.PadListener {
+public class ChooseMPinPresenter extends Presenter<ChooseMPinView> implements Pad.PadListener {
 
     private String first;
 

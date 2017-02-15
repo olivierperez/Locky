@@ -22,9 +22,6 @@ import fr.o80.locky.R2;
  */
 public class Pad extends LinearLayout {
 
-    public static final String KEY_OK = "KEY_OK";
-    public static final String KEY_CLEAR = "CLEAR";
-
     private WeakReference<PadListener> listener;
 
     private StringBuilder password = new StringBuilder();

@@ -34,4 +34,8 @@ public class LPref {
                 .putString(KEY_PASSWORD, password)
                 .apply();
     }
+
+    public String getPassword() {
+        return prefs.getString(KEY_PASSWORD, null);
+    }
 }
