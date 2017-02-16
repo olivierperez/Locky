@@ -1,4 +1,4 @@
-image: jacekmarchwicki/android
+image: donovanfournier/android
 
 stages:
   - build
