@@ -1,5 +1,7 @@
 package fr.o80.locky.pad.presenter;
 
+import android.support.annotation.StringRes;
+
 import fr.o80.locky.base.PresenterView;
 
 /**
@@ -8,4 +10,5 @@ import fr.o80.locky.base.PresenterView;
 public interface ChooseMPinView extends PresenterView {
     void clear();
     void confirm();
+    void changeText(@StringRes int strRes);
 }

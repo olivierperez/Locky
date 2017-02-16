@@ -4,6 +4,7 @@ import android.util.Log;
 
 import javax.inject.Inject;
 
+import fr.o80.locky.R;
 import fr.o80.locky.base.Presenter;
 import fr.o80.locky.component.Pad;
 import fr.o80.locky.service.LockyConf;
@@ -28,10 +29,15 @@ public class ChooseMPinPresenter extends Presenter<ChooseMPinView> implements Pa
         if (first == null) {
             first = password;
             view.clear();
+            view.changeText(R.string.confirm_code);
         } else {
             if (first.equals(password)) {
                 LockyConf.getInstance().setPassword(password);
                 view.confirm();
+            } else {
+                first = null;
+                view.clear();
+                view.changeText(R.string.choose_code);
             }
         }
         Log.d("Password", password);

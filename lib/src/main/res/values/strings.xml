@@ -13,4 +13,6 @@
     <string name="n9">9</string>
     <string name="clear"><![CDATA[<]]></string>
     <string name="ok">OK</string>
+    <string name="confirm_code">Confirm the code</string>
+    <string name="choose_code">Choose a code</string>
 </resources>
