@@ -167,7 +167,7 @@
             android:layout_marginTop="0dp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:padding="16dp"
-            android:text="@string/clear"
+            android:drawableTop="@drawable/ic_backspace"
             android:textSize="30sp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@+id/pad_0"
@@ -195,8 +195,8 @@
             android:layout_marginTop="0dp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:padding="16dp"
-            android:text="@string/ok"
             android:textSize="30sp"
+            android:drawableTop="@drawable/ic_done"
             app:layout_constraintLeft_toRightOf="@+id/pad_0"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="@+id/pad_0"/>
