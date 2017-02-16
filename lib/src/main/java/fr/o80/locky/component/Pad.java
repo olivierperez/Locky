@@ -2,6 +2,7 @@ package fr.o80.locky.component;
 
 
 import android.content.Context;
+import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,6 +32,11 @@ public class Pad extends LinearLayout {
 
     public Pad(Context context, AttributeSet attrs) {
         super(context, attrs);
+        init();
+    }
+
+    public Pad(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
         init();
     }
 
