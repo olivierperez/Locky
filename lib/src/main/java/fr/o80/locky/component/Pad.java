@@ -15,6 +15,7 @@ import java.lang.ref.WeakReference;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import butterknife.OnLongClick;
 import fr.o80.locky.R;
 import fr.o80.locky.R2;
 
@@ -73,6 +74,13 @@ public class Pad extends LinearLayout {
             password.deleteCharAt(password.length() - 1);
         }
         updateTextField();
+    }
+
+
+    @OnLongClick(R2.id.pad_clear)
+    protected boolean onLongClear() {
+        clear();
+        return true;
     }
 
     @OnClick(R2.id.pad_ok)
