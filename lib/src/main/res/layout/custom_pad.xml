@@ -158,7 +158,7 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="@+id/pad_2"/>
 
-        <Button
+        <ImageButton
             android:id="@+id/pad_clear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -166,8 +166,9 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="0dp"
             android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/clear"
             android:padding="16dp"
-            android:drawableTop="@drawable/ic_backspace"
+            android:src="@drawable/ic_backspace"
             android:textSize="30sp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@+id/pad_0"
@@ -186,7 +187,7 @@
             app:layout_constraintRight_toLeftOf="@+id/pad_ok"
             app:layout_constraintTop_toBottomOf="@+id/pad_2"/>
 
-        <Button
+        <ImageButton
             android:id="@+id/pad_ok"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -194,9 +195,10 @@
             android:layout_marginRight="8dp"
             android:layout_marginTop="0dp"
             android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/ok"
             android:padding="16dp"
+            android:src="@drawable/ic_done"
             android:textSize="30sp"
-            android:drawableTop="@drawable/ic_done"
             app:layout_constraintLeft_toRightOf="@+id/pad_0"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="@+id/pad_0"/>
