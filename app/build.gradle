@@ -41,8 +41,8 @@ dependencies {
     debugCompile project(path: ':lib', configuration: 'debug')
     releaseCompile project(path: ':lib', configuration: 'release')
 
-    compile 'com.android.support:appcompat-v7:25.2.0'
-    compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha9'
+    compile libs.compatV7
+    compile libs.constraintLayout
 
-    testCompile 'junit:junit:4.12'
+    testCompile libs.junit
 }

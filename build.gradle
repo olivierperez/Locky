@@ -25,6 +25,31 @@ allprojects {
     }
 }
 
+ext {
+    version = [
+            support    : '25.2.0',
+            butterKnife: '8.5.1',
+            dagger     : '2.9'
+    ]
+    libs = [
+            // Support
+            compatV7            : "com.android.support:appcompat-v7:${version.support}",
+            constraintLayout    : 'com.android.support.constraint:constraint-layout:1.0.0-beta5',
+
+            // UI
+            butterKnife         : "com.jakewharton:butterknife:${version.butterKnife}",
+            butterKnifeProcessor: "com.jakewharton:butterknife-compiler:${version.butterKnife}",
+
+            // DI
+            dagger              : "com.google.dagger:dagger:${version.dagger}",
+            daggerProcessor     : "com.google.dagger:dagger-compiler:${version.dagger}",
+            jsr250              : 'javax.annotation:jsr250-api:1.0',
+
+            // Tests
+            junit               : 'junit:junit:4.12'
+    ]
+}
+
 task clean(type: Delete) {
     delete rootProject.buildDir
 }

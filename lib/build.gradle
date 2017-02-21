@@ -27,22 +27,18 @@ android {
 }
 
 dependencies {
-    final SUPPORT_LIBRARY_VERSION = '25.2.0'
-    final BUTTERKNIFE_VERSION = '8.5.1'
-    final DAGGER_VERSION = '2.9'
-
     // Support
-    compile "com.android.support:appcompat-v7:$SUPPORT_LIBRARY_VERSION"
-    compile 'com.android.support.constraint:constraint-layout:1.0.0-beta5'
+    compile libs.compatV7
+    compile libs.constraintLayout
 
     // UI
-    compile "com.jakewharton:butterknife:$BUTTERKNIFE_VERSION"
-    annotationProcessor "com.jakewharton:butterknife-compiler:$BUTTERKNIFE_VERSION"
+    compile libs.butterKnife
+    annotationProcessor libs.butterKnifeProcessor
 
-    testCompile 'junit:junit:4.12'
+    testCompile libs.junit
 
     // Dependency injection
-    compile "com.google.dagger:dagger:$DAGGER_VERSION"
-    annotationProcessor "com.google.dagger:dagger-compiler:$DAGGER_VERSION"
-    provided 'javax.annotation:jsr250-api:1.0'
+    compile libs.dagger
+    annotationProcessor libs.daggerProcessor
+    provided libs.jsr250
 }
