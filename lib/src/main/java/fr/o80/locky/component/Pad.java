@@ -1,11 +1,14 @@
 package fr.o80.locky.component;
 
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.content.Context;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.animation.CycleInterpolator;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -94,6 +97,19 @@ public class Pad extends LinearLayout {
     public void clear() {
         password.delete(0, password.length());
         updateTextField();
+    }
+
+    public void wrongPassword() {
+        passwordTextView.animate()
+                .setInterpolator(new CycleInterpolator(3))
+                .translationXBy(10)
+                .setListener(new AnimatorListenerAdapter() {
+                    @Override
+                    public void onAnimationEnd(Animator animation) {
+                        super.onAnimationEnd(animation);
+                        clear();
+                    }
+                });
     }
 
     public interface PadListener {

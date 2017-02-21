@@ -7,4 +7,5 @@ import fr.o80.locky.base.PresenterView;
  */
 public interface CheckMPinView extends PresenterView {
     void confirm();
+    void wrongPassword();
 }

@@ -20,7 +20,7 @@ public class CheckMPinPresenter extends Presenter<CheckMPinView> implements Pad.
         if (LockyConf.getInstance().check(password)) {
             view.confirm();
         } else {
-
+            view.wrongPassword();
         }
     }
 }
