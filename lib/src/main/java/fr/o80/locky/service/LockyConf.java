@@ -11,6 +11,7 @@ import fr.o80.locky.dagger.LockyModule;
  */
 public final class LockyConf {
 
+    public static final int RESULT_CANCELED = -1;
     public static final int RESULT_ENROLLED = 1;
     public static final int RESULT_CHECK = 2;
 

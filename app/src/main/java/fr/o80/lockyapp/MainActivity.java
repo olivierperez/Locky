@@ -30,6 +30,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == REQUEST_CODE_LOCK) {
             switch (resultCode) {
+                case LockyConf.RESULT_CANCELED:
+                    finish();
+                    break;
                 case LockyConf.RESULT_CHECK:
                     Toast.makeText(this, "Authentication checked", Toast.LENGTH_SHORT).show();
                     break;

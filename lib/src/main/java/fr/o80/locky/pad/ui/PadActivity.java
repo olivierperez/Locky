@@ -37,4 +37,10 @@ public class PadActivity extends BaseActivity {
         setResult(LockyConf.RESULT_CHECK);
         finish();
     }
+
+    @Override
+    public void onBackPressed() {
+        setResult(LockyConf.RESULT_CANCELED);
+        finish();
+    }
 }
