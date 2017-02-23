@@ -12,6 +12,9 @@
     <string name="n8">8</string>
     <string name="n9">9</string>
 
+    <string name="clear_desc">Clear</string>
+    <string name="ok_desc">OK</string>
+
     <string name="confirm_code">Confirm the code</string>
     <string name="choose_code">Choose a code</string>
 </resources>
