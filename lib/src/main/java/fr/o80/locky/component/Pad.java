@@ -4,6 +4,8 @@ package fr.o80.locky.component;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.content.Context;
+import android.content.res.TypedArray;
+import android.support.annotation.AttrRes;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -36,20 +38,24 @@ public class Pad extends LinearLayout {
 
     public Pad(Context context, AttributeSet attrs) {
         super(context, attrs);
-        init();
+        init(attrs, R.attr.lockyStyle);
     }
 
     public Pad(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        init();
+        init(attrs, defStyleAttr);
     }
 
-    private void init() {
+    private void init(AttributeSet attrs, @AttrRes int style) {
         setOrientation(VERTICAL);
 
         LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view = inflater.inflate(R.layout.custom_pad, this, true);
         ButterKnife.bind(this, view);
+
+        TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.LockyPad, style, 0);
+        setBackgroundResource(a.getResourceId(R.styleable.LockyPad_lk_background, R.color.white));
+        a.recycle();
     }
 
     public void setListener(PadListener padListener) {

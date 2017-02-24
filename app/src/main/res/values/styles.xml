@@ -6,6 +6,12 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="lockyStyle">@style/LockyStyle</item>
+    </style>
+
+    <style name="LockyStyle">
+        <item name="lk_background">@android:color/holo_red_light</item>
     </style>
 
 </resources>

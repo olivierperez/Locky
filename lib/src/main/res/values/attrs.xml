@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="LockyPad">
+        <attr name="lk_background" format="color|reference"/>
+        <attr name="lk_textColor" format="color"/>
+        <attr name="lk_chooseCodeText" format="string|reference"/>
+        <attr name="lk_confirmCodeText" format="string|reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="Themes">
+        <attr name="lockyStyle" format="reference"/>
+    </declare-styleable>
+</resources>
