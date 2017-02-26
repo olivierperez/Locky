@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
 import android.view.View;
-import android.widget.TextView;
 
 import javax.inject.Inject;
 
@@ -25,9 +24,6 @@ public class ChooseMPinFragment extends BaseFragment implements ChooseMPinView {
     @Inject
     protected ChooseMPinPresenter presenter;
 
-    @BindView(R2.id.textView)
-    protected TextView textView;
-
     @BindView(R2.id.pad)
     protected Pad pad;
 
@@ -42,7 +38,7 @@ public class ChooseMPinFragment extends BaseFragment implements ChooseMPinView {
 
     @Override
     protected int layoutId() {
-        return R.layout.fragment_choose_mpin;
+        return R.layout.fragment;
     }
 
     @Override
@@ -68,6 +64,6 @@ public class ChooseMPinFragment extends BaseFragment implements ChooseMPinView {
 
     @Override
     public void changeText(@StringRes int strRes) {
-        textView.setText(strRes);
+        pad.setTitle(strRes);
     }
 }

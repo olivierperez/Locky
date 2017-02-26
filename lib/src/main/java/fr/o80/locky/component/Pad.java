@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.support.annotation.AttrRes;
 import android.support.annotation.Nullable;
+import android.support.annotation.StringRes;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -33,6 +34,9 @@ public class Pad extends LinearLayout {
 
     private StringBuilder password = new StringBuilder();
 
+    @BindView(R2.id.pad_title)
+    protected TextView titleTextView;
+
     @BindView(R2.id.pad_password)
     protected TextView passwordTextView;
 
@@ -50,7 +54,7 @@ public class Pad extends LinearLayout {
         setOrientation(VERTICAL);
 
         LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View view = inflater.inflate(R.layout.custom_pad, this, true);
+        View view = inflater.inflate(R.layout.pad, this, true);
         ButterKnife.bind(this, view);
 
         TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.LockyPad, style, 0);
@@ -116,6 +120,10 @@ public class Pad extends LinearLayout {
                         clear();
                     }
                 });
+    }
+
+    public void setTitle(@StringRes int titleRes) {
+        titleTextView.setText(titleRes);
     }
 
     public interface PadListener {

@@ -38,7 +38,7 @@ public class CheckMPinFragment extends BaseFragment implements CheckMPinView {
 
     @Override
     protected int layoutId() {
-        return R.layout.fragment_check_mpin;
+        return R.layout.fragment;
     }
 
     @Override

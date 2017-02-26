@@ -14,7 +14,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected final void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_simple);
+        setContentView(R.layout.activity);
 
         initialFragment(newInitialFragment());
 
