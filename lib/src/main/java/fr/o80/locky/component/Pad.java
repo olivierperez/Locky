@@ -3,16 +3,26 @@ package fr.o80.locky.component;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
+import android.annotation.TargetApi;
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
+import android.graphics.ColorFilter;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.support.annotation.AttrRes;
+import android.support.annotation.DrawableRes;
+import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.graphics.drawable.DrawableCompat;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.animation.CycleInterpolator;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -59,7 +69,36 @@ public class Pad extends LinearLayout {
 
         TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.LockyPad, style, 0);
         setBackgroundResource(a.getResourceId(R.styleable.LockyPad_lk_background, R.color.white));
+        setTextColor(a.getColorStateList(R.styleable.LockyPad_lk_textColor));
         a.recycle();
+    }
+
+    private void setTextColor(ColorStateList colorStateList) {
+        if (colorStateList != null) {
+            titleTextView.setTextColor(colorStateList);
+            passwordTextView.setTextColor(colorStateList);
+            setTextColor(R.id.pad_0, colorStateList);
+            setTextColor(R.id.pad_1, colorStateList);
+            setTextColor(R.id.pad_2, colorStateList);
+            setTextColor(R.id.pad_3, colorStateList);
+            setTextColor(R.id.pad_4, colorStateList);
+            setTextColor(R.id.pad_5, colorStateList);
+            setTextColor(R.id.pad_6, colorStateList);
+            setTextColor(R.id.pad_7, colorStateList);
+            setTextColor(R.id.pad_8, colorStateList);
+            setTextColor(R.id.pad_9, colorStateList);
+            setTint(R.id.pad_ok, R.drawable.ic_done, colorStateList);
+            setTint(R.id.pad_clear, R.drawable.ic_backspace, colorStateList);
+        }
+    }
+
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    private void setTint(@IdRes int id, @DrawableRes int drawableRes, ColorStateList colorStateList) {
+        ((ImageButton) findViewById(id)).setColorFilter(colorStateList.getDefaultColor());
+    }
+
+    private void setTextColor(@IdRes int id, ColorStateList colorStateList) {
+        ((Button) findViewById(id)).setTextColor(colorStateList);
     }
 
     public void setListener(PadListener padListener) {
@@ -124,6 +163,7 @@ public class Pad extends LinearLayout {
 
     public void setTitle(@StringRes int titleRes) {
         titleTextView.setText(titleRes);
+        titleTextView.setVisibility(View.VISIBLE);
     }
 
     public interface PadListener {

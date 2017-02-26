@@ -11,7 +11,8 @@
     </style>
 
     <style name="LockyStyle">
-        <item name="lk_background">@android:color/holo_red_light</item>
+        <item name="lk_background">@color/colorPrimary</item>
+        <item name="lk_textColor">@android:color/white</item>
     </style>
 
 </resources>

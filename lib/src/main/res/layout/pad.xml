@@ -11,11 +11,12 @@
         android:id="@+id/pad_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:paddingBottom="16dp"
         android:paddingTop="16dp"
-        android:gravity="center"
         android:text="@string/choose_code"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:visibility="gone"/>
 
     <android.support.v4.widget.Space
         android:layout_width="match_parent"
