@@ -34,7 +34,7 @@ ext {
     libs = [
             // Support
             compatV7            : "com.android.support:appcompat-v7:${version.support}",
-            constraintLayout    : 'com.android.support.constraint:constraint-layout:1.0.0-beta5',
+            constraintLayout    : 'com.android.support.constraint:constraint-layout:1.0.0',
 
             // UI
             butterKnife         : "com.jakewharton:butterknife:${version.butterKnife}",
