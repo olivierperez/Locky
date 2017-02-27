@@ -25,6 +25,7 @@ public final class LockyConf {
     private int colorRes;
     private int chooseCodeRes;
     private int confirmCodeRes;
+    private int titleRes;
 
     public static void init(LockyConf conf) {
         component = DaggerLockyComponent.builder()
@@ -54,6 +55,11 @@ public final class LockyConf {
         return this;
     }
 
+    public LockyConf withTitle(@StringRes int titleRes) {
+        this.titleRes = titleRes;
+        return this;
+    }
+
     public LockyConf withTexts(@StringRes int chooseCodeRes, @StringRes int confirmCodeRes) {
         this.chooseCodeRes = chooseCodeRes;
         this.confirmCodeRes = confirmCodeRes;
@@ -78,5 +84,9 @@ public final class LockyConf {
 
     public int getConfirmCodeRes() {
         return confirmCodeRes;
+    }
+
+    public int getTitleRes() {
+        return titleRes;
     }
 }
