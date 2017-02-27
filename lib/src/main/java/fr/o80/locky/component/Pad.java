@@ -6,19 +6,13 @@ import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.ColorStateList;
-import android.content.res.TypedArray;
-import android.graphics.ColorFilter;
-import android.graphics.drawable.Drawable;
 import android.os.Build;
-import android.support.annotation.AttrRes;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.graphics.drawable.DrawableCompat;
 import android.util.AttributeSet;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.animation.CycleInterpolator;
 import android.widget.Button;
@@ -28,12 +22,15 @@ import android.widget.TextView;
 
 import java.lang.ref.WeakReference;
 
+import javax.inject.Inject;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.OnLongClick;
 import fr.o80.locky.R;
 import fr.o80.locky.R2;
+import fr.o80.locky.service.LockyConf;
 
 /**
  * @author Olivier Perez
@@ -44,6 +41,9 @@ public class Pad extends LinearLayout {
 
     private StringBuilder password = new StringBuilder();
 
+    @Inject
+    protected LockyConf conf;
+
     @BindView(R2.id.pad_title)
     protected TextView titleTextView;
 
@@ -52,25 +52,25 @@ public class Pad extends LinearLayout {
 
     public Pad(Context context, AttributeSet attrs) {
         super(context, attrs);
-        init(attrs, R.attr.lockyStyle);
+        init();
     }
 
     public Pad(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        init(attrs, defStyleAttr);
+        init();
     }
 
-    private void init(AttributeSet attrs, @AttrRes int style) {
+    private void init() {
+        LockyConf.component().inject(this);
+
         setOrientation(VERTICAL);
 
-        LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View view = inflater.inflate(R.layout.pad, this, true);
+        View view = inflate(getContext(), R.layout.pad, this);
         ButterKnife.bind(this, view);
 
-        TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.LockyPad, style, 0);
-        setBackgroundResource(a.getResourceId(R.styleable.LockyPad_lk_background, R.color.white));
-        setTextColor(a.getColorStateList(R.styleable.LockyPad_lk_textColor));
-        a.recycle();
+        if (conf.getColorRes() != 0) {
+            setTextColor(ContextCompat.getColorStateList(conf.getContext(), conf.getColorRes()));
+        }
     }
 
     private void setTextColor(ColorStateList colorStateList) {

@@ -12,6 +12,9 @@ public class DemoApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        LockyConf.init(this);
+        LockyConf.init(new LockyConf(this)
+                .withBackground(R.color.colorPrimary)
+                .withTextColor(android.R.color.white)
+                .withTexts(R.string.choose_code, R.string.confirm_code));
     }
 }

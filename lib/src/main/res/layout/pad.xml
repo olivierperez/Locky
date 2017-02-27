@@ -14,7 +14,6 @@
         android:gravity="center"
         android:paddingBottom="16dp"
         android:paddingTop="16dp"
-        android:text="@string/choose_code"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:visibility="gone"/>
 

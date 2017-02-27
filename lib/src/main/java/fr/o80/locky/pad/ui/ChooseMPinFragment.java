@@ -24,6 +24,9 @@ public class ChooseMPinFragment extends BaseFragment implements ChooseMPinView {
     @Inject
     protected ChooseMPinPresenter presenter;
 
+    @Inject
+    protected LockyConf conf;
+
     @BindView(R2.id.pad)
     protected Pad pad;
 
@@ -50,6 +53,9 @@ public class ChooseMPinFragment extends BaseFragment implements ChooseMPinView {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         pad.setListener(presenter);
+        view.setBackgroundResource(conf.getBackgroundRes());
+
+        presenter.init();
     }
 
     @Override

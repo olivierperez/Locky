@@ -24,6 +24,9 @@ public class CheckMPinFragment extends BaseFragment implements CheckMPinView {
     @Inject
     protected CheckMPinPresenter presenter;
 
+    @Inject
+    protected LockyConf conf;
+
     @BindView(R2.id.pad)
     protected Pad pad;
 
@@ -50,6 +53,7 @@ public class CheckMPinFragment extends BaseFragment implements CheckMPinView {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         pad.setListener(presenter);
+        view.setBackgroundResource(conf.getBackgroundRes());
     }
 
     @Override

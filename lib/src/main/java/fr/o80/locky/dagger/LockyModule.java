@@ -6,6 +6,7 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
+import fr.o80.locky.service.LockyConf;
 
 /**
  * @author Olivier Perez
@@ -13,15 +14,21 @@ import dagger.Provides;
 @Module
 public class LockyModule {
 
-    private final Context context;
+    private LockyConf conf;
 
-    public LockyModule(Context context) {
-        this.context = context;
+    public LockyModule(LockyConf conf) {
+        this.conf = conf;
     }
 
     @Provides
     @Singleton
     public Context provideContext() {
-        return context;
+        return conf.getContext();
+    }
+
+    @Provides
+    @Singleton
+    public LockyConf provideLockyConf() {
+        return conf;
     }
 }
