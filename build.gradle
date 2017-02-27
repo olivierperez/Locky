@@ -26,6 +26,14 @@ allprojects {
 }
 
 ext {
+    versionCode = 1
+    versionName = "1.0"
+
+    commonCompileSdkVersion = 25
+    commonBuildToolsVersion = "25.0.2"
+    commonMinSdkVersion = 16
+    commonTargetSdkVersion = 25
+
     version = [
             support    : '25.2.0',
             butterKnife: '8.5.1',
