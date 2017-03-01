@@ -15,7 +15,7 @@ before_script:
 Compile:
   stage: build
   script:
-    - ./gradlew :app:assembleRelease
+    - ./gradlew :app:assembleDebug
 
 checkstyle:
   stage: checkstyle
@@ -30,6 +30,6 @@ Lint:
 Unit Test:
   stage: unittest
   script:
-    - ./gradlew :lib:testReleaseUnitTest
+    - ./gradlew :lib:testDebugUnitTest
   dependencies:
     - Compile
