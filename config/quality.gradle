@@ -1,0 +1,40 @@
+apply plugin: 'checkstyle'
+apply plugin: 'findbugs'
+
+task checkstyle(type: Checkstyle) {
+    group = 'quality'
+    configFile file("${project.rootDir}/config/checkstyle/checkstyle.xml")
+    configProperties.checkstyleSuppressionsPath = file("${project.rootDir}/config/checkstyle/suppressions.xml").absolutePath
+    include '**/*.java'
+    exclude '**/gen/**'
+
+    def sets = project.android.sourceSets;
+
+    sets.all { sourceSet ->
+        if (!sourceSet.name.startsWith("test") && !sourceSet.name.startsWith("androidTest")) {
+            source sourceSet.java.srcDirs
+        }
+    }
+
+    classpath = files()
+}
+
+
+android {
+
+    lintOptions {
+        warningsAsErrors true
+        abortOnError true
+        htmlReport true
+        xmlReport false
+        htmlOutput file("$project.buildDir/reports/lint/lint.html")
+    }
+
+}
+
+def lint = project.tasks.lint
+lint.group = 'quality'
+
+project.tasks.check.group = 'quality'
+project.tasks.check.dependsOn 'checkstyle'
+project.tasks.check.dependsOn lint
