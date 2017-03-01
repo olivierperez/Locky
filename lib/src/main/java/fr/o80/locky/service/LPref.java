@@ -18,8 +18,6 @@ public class LPref {
 
     private final SharedPreferences prefs;
 
-    public Context context;
-
     @Inject
     public LPref(Context context) {
         prefs = context.getSharedPreferences(SHAREDPREF_NAME, Context.MODE_PRIVATE);

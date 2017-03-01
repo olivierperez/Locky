@@ -65,7 +65,7 @@ public class ChooseMPinFragment extends BaseFragment implements ChooseMPinView {
 
     @Override
     public void confirm() {
-        ((PadActivity)getActivity()).confirmEnrolment();
+        ((PadActivity) getActivity()).confirmEnrolment();
     }
 
     @Override

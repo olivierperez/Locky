@@ -37,10 +37,6 @@ import fr.o80.locky.service.LockyConf;
  */
 public class Pad extends LinearLayout {
 
-    private WeakReference<PadListener> listener;
-
-    private StringBuilder password = new StringBuilder();
-
     @Inject
     protected LockyConf conf;
 
@@ -49,6 +45,10 @@ public class Pad extends LinearLayout {
 
     @BindView(R2.id.pad_password)
     protected TextView passwordTextView;
+
+    private WeakReference<PadListener> listener;
+
+    private StringBuilder password = new StringBuilder();
 
     public Pad(Context context, AttributeSet attrs) {
         super(context, attrs);

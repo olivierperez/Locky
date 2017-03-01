@@ -27,14 +27,14 @@ public final class LockyConf {
     private int confirmCodeRes;
     private int titleRes;
 
+    public LockyConf(Context context) {
+        this.context = context;
+    }
+
     public static void init(LockyConf conf) {
         component = DaggerLockyComponent.builder()
                 .lockyModule(new LockyModule(conf))
                 .build();
-    }
-
-    public LockyConf(Context context) {
-        this.context = context;
     }
 
     public static Locky getInstance() {

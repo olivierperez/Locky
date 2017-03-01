@@ -38,3 +38,4 @@ lint.group = 'quality'
 project.tasks.check.group = 'quality'
 project.tasks.check.dependsOn 'checkstyle'
 project.tasks.check.dependsOn lint
+project.tasks.check.dependsOn 'testDebugUnitTest'
