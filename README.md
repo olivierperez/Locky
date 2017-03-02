@@ -5,6 +5,8 @@ Locky Android helps you to protect your Android applications with a pad screen.
 - At the first use, the user will choose a Pin as long as he want.
 - All the following starts will be locked by the pad screen, the user's data will be protected.
 
+[![](https://jitpack.io/v/olivierperez/locky.svg)](https://jitpack.io/#olivierperez/locky)
+
 ## Usage
 
 ### Configure Locky
