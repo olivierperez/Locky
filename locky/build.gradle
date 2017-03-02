@@ -1,19 +1,24 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.jakewharton.butterknife'
+apply plugin: 'com.github.dcendents.android-maven'
 apply from: '../config/quality.gradle'
+
+group='com.github.olivierperez'
 
 android {
     compileSdkVersion commonCompileSdkVersion
     buildToolsVersion commonBuildToolsVersion
+
     publishNonDefault true
+    defaultPublishConfig = 'release'
 
     defaultConfig {
         minSdkVersion commonMinSdkVersion
         targetSdkVersion commonTargetSdkVersion
         versionCode versionCode
         versionName versionName
-
     }
+
     buildTypes {
         release {
             minifyEnabled false
