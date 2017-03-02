@@ -2,9 +2,7 @@ image: renaudboulard/android-docker
 
 stages:
   - build
-  - checkstyle
-  - lint
-  - unittest
+  - quality
 
 before_script:
   - chmod +x gradlew
@@ -18,18 +16,18 @@ Compile:
     - ./gradlew :app:assembleDebug
 
 checkstyle:
-  stage: checkstyle
+  stage: quality
   script:
-    - ./gradlew :lib:checkstyle
+    - ./gradlew :locky:checkstyle
 
 Lint:
-  stage: lint
+  stage: quality
   script:
-    - ./gradlew :lib:lint
+    - ./gradlew :locky:lint
 
 Unit Test:
-  stage: unittest
+  stage: quality
   script:
-    - ./gradlew :lib:testDebugUnitTest
+    - ./gradlew :locky:testDebugUnitTest
   dependencies:
     - Compile
