@@ -128,7 +128,7 @@ and the dependency in the `build.gradle` of the module:
 
 ```gradle
 dependencies {
-    compile 'com.github.olivierperez:locky:1.0'
+    compile 'com.github.olivierperez:locky:1.2:release@aar'
 }
 ```
 
