@@ -38,8 +38,8 @@ android {
 }
 
 dependencies {
-    debugCompile project(path: ':lib', configuration: 'debug')
-    releaseCompile project(path: ':lib', configuration: 'release')
+    debugCompile project(path: ':locky', configuration: 'debug')
+    releaseCompile project(path: ':locky', configuration: 'release')
 
     compile libs.compatV7
     compile libs.constraintLayout
