@@ -5,7 +5,12 @@ Locky Android helps you to protect your Android applications with a pad screen.
 - At the first use, the user will choose a Pin as long as he want.
 - All the following starts will be locked by the pad screen, the user's data will be protected.
 
-[![](https://jitpack.io/v/olivierperez/locky.svg)](https://jitpack.io/#olivierperez/locky)
+<a href="https://github.com/olivierperez/Locky/raw/master/art/screenshot/Locky_choose_code.png">
+    <img src="https://github.com/olivierperez/Locky/raw/master/art/screenshot/Locky_choose_code.png" width="200"/>
+</a>
+<a href="https://github.com/olivierperez/Locky/raw/master/art/screenshot/Locky_unlock_pad.png">
+    <img src="https://github.com/olivierperez/Locky/raw/master/art/screenshot/Locky_unlock_pad.png" width="200"/>
+</a>
 
 ## Usage
 
@@ -124,7 +129,7 @@ repositories {
     maven { url "https://jitpack.io" }
 }
 ```
-and the dependency in the `build.gradle` of the module:
+and the dependency in the `build.gradle` of the module: [![](https://jitpack.io/v/olivierperez/locky.svg)](https://jitpack.io/#olivierperez/locky)
 
 ```gradle
 dependencies {
