@@ -38,12 +38,10 @@ android {
 }
 
 dependencies {
-    // Example: compile 'com.github.olivierperez:locky:1.2:release@aar'
-    debugCompile project(path: ':locky', configuration: 'debug')
-    releaseCompile project(path: ':locky', configuration: 'release')
+    implementation project(path: ':locky')
 
-    compile libs.compatV7
-    compile libs.constraintLayout
+    implementation libs.compatV7
+    implementation libs.constraintLayout
 
-    testCompile libs.junit
+    testImplementation libs.junit
 }

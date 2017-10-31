@@ -34,17 +34,17 @@ android {
 
 dependencies {
     // Support
-    compile libs.compatV7
-    compile libs.constraintLayout
+    implementation libs.compatV7
+    implementation libs.constraintLayout
 
     // UI
-    compile libs.butterKnife
+    implementation libs.butterKnife
     annotationProcessor libs.butterKnifeProcessor
 
-    testCompile libs.junit
+    testImplementation libs.junit
 
     // Dependency injection
-    compile libs.dagger
+    implementation libs.dagger
     annotationProcessor libs.daggerProcessor
-    provided libs.jsr250
+    compileOnly libs.jsr250
 }
