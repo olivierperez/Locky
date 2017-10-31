@@ -61,13 +61,15 @@ public class Pad extends ConstraintLayout {
     }
 
     private void init() {
-        LockyConf.component().inject(this);
+        if (!isInEditMode()) {
+            LockyConf.component().inject(this);
 
-        View view = inflate(getContext(), R.layout.pad, this);
-        ButterKnife.bind(this, view);
+            View view = inflate(getContext(), R.layout.pad, this);
+            ButterKnife.bind(this, view);
 
-        if (conf.getColorRes() != 0) {
-            setTextColor(ContextCompat.getColorStateList(conf.getContext(), conf.getColorRes()));
+            if (conf.getColorRes() != 0) {
+                setTextColor(ContextCompat.getColorStateList(conf.getContext(), conf.getColorRes()));
+            }
         }
     }
 
