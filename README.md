@@ -107,6 +107,12 @@ dependencies {
 }
 ```
 
+## Breaking changes
+
+### 2.0
+
+- LockyConf moves to package `fr.o80.locky.api`
+
 ## License
 
     Copyright 2016 Olivier Perez
