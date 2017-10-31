@@ -43,6 +43,9 @@ import fr.o80.locky.service.LockyConf;
 
 public class MainActivity extends AppCompatActivity {
 
+    // To handle pad result
+    private static final int REQUEST_CODE_LOCK = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,54 +55,22 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        
+        // Check if user is locked
         if (LockyConf.getInstance().isLocked()) {
-            // User is locked, or didn't choose a pin
+        
+            // User is locked, or didn't choose a pin => Show pad screen
+            Intent intent = LockyConf.getInstance().lockActivity(this);
+            startActivityForResult(intent, REQUEST_CODE_LOCK);
+            
         } else {
             // User is unlocked
         }
     }
 
-}
-```
-
-### Show pad screen
-
-```java
-import fr.o80.locky.service.LockyConf;
-
-public class MainActivity extends AppCompatActivity {
-
-    private static final int REQUEST_CODE_LOCK = 0;
-
-    // onCreate...
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        if (LockyConf.getInstance().isLocked()) {
-            Intent intent = LockyConf.getInstance().lockActivity(this);
-            startActivityForResult(intent, REQUEST_CODE_LOCK);
-        }
-    }
-
-}
-```
-
-### Handle pad result
-
-```java
-import fr.o80.locky.service.LockyConf;
-
-public class MainActivity extends AppCompatActivity {
-
-    private static final int REQUEST_CODE_LOCK = 0;
-
-    // onCreate...
-
-    // onResume...
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        // Handle pad result
         if (requestCode == REQUEST_CODE_LOCK) {
             switch (resultCode) {
                 case LockyConf.RESULT_CANCELED:
@@ -117,7 +88,6 @@ public class MainActivity extends AppCompatActivity {
 
 }
 ```
-
 
 ## Download
 
