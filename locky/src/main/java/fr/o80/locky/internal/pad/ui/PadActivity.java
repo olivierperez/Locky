@@ -1,4 +1,4 @@
-package fr.o80.locky.pad.ui;
+package fr.o80.locky.internal.pad.ui;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,8 +10,8 @@ import android.support.v4.app.Fragment;
 import javax.inject.Inject;
 
 import fr.o80.locky.R;
-import fr.o80.locky.base.BaseActivity;
-import fr.o80.locky.service.LockyConf;
+import fr.o80.locky.internal.base.BaseActivity;
+import fr.o80.locky.api.LockyConf;
 
 public class PadActivity extends BaseActivity {
 

@@ -1,6 +1,6 @@
-package fr.o80.locky.pad.presenter;
+package fr.o80.locky.internal.pad.presenter;
 
-import fr.o80.locky.base.PresenterView;
+import fr.o80.locky.internal.base.PresenterView;
 
 /**
  * @author Olivier Perez

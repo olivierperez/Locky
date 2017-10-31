@@ -1,8 +1,7 @@
-package fr.o80.locky.pad.ui;
+package fr.o80.locky.internal.pad.ui;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.annotation.StringRes;
 import android.view.View;
 
 import javax.inject.Inject;
@@ -10,19 +9,20 @@ import javax.inject.Inject;
 import butterknife.BindView;
 import fr.o80.locky.R;
 import fr.o80.locky.R2;
-import fr.o80.locky.base.BaseFragment;
-import fr.o80.locky.component.Pad;
-import fr.o80.locky.pad.presenter.ChooseMPinPresenter;
-import fr.o80.locky.pad.presenter.ChooseMPinView;
-import fr.o80.locky.service.LockyConf;
+import fr.o80.locky.internal.base.BaseFragment;
+import fr.o80.locky.internal.base.Presenter;
+import fr.o80.locky.internal.component.Pad;
+import fr.o80.locky.internal.pad.presenter.CheckMPinPresenter;
+import fr.o80.locky.internal.pad.presenter.CheckMPinView;
+import fr.o80.locky.api.LockyConf;
 
 /**
  * @author Olivier Perez
  */
-public class ChooseMPinFragment extends BaseFragment implements ChooseMPinView {
+public class CheckMPinFragment extends BaseFragment implements CheckMPinView {
 
     @Inject
-    protected ChooseMPinPresenter presenter;
+    protected CheckMPinPresenter presenter;
 
     @Inject
     protected LockyConf conf;
@@ -30,8 +30,8 @@ public class ChooseMPinFragment extends BaseFragment implements ChooseMPinView {
     @BindView(R2.id.pad)
     protected Pad pad;
 
-    public static ChooseMPinFragment newInstance() {
-        return new ChooseMPinFragment();
+    public static CheckMPinFragment newInstance() {
+        return new CheckMPinFragment();
     }
 
     @Override
@@ -45,7 +45,7 @@ public class ChooseMPinFragment extends BaseFragment implements ChooseMPinView {
     }
 
     @Override
-    protected ChooseMPinPresenter getPresenter() {
+    protected Presenter getPresenter() {
         return presenter;
     }
 
@@ -54,22 +54,15 @@ public class ChooseMPinFragment extends BaseFragment implements ChooseMPinView {
         super.onViewCreated(view, savedInstanceState);
         pad.setListener(presenter);
         view.setBackgroundResource(conf.getBackgroundRes());
-
-        presenter.init();
-    }
-
-    @Override
-    public void clear() {
-        pad.clear();
     }
 
     @Override
     public void confirm() {
-        ((PadActivity) getActivity()).confirmEnrolment();
+        ((PadActivity) getActivity()).confirmCheck();
     }
 
     @Override
-    public void changeText(@StringRes int strRes) {
-        pad.setTitle(strRes);
+    public void wrongPassword() {
+        pad.wrongPassword();
     }
 }

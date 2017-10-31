@@ -1,4 +1,4 @@
-package fr.o80.locky.base;
+package fr.o80.locky.internal.base;
 
 import android.content.Context;
 import android.os.Bundle;

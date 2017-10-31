@@ -1,4 +1,4 @@
-package fr.o80.locky.service;
+package fr.o80.locky.internal.service;
 
 import android.content.Context;
 import android.content.Intent;
@@ -6,7 +6,7 @@ import android.content.Intent;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
-import fr.o80.locky.pad.ui.PadActivity;
+import fr.o80.locky.internal.pad.ui.PadActivity;
 
 /**
  * @author Olivier Perez

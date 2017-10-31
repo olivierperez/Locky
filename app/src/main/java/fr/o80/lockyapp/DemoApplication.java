@@ -2,7 +2,7 @@ package fr.o80.lockyapp;
 
 import android.app.Application;
 
-import fr.o80.locky.service.LockyConf;
+import fr.o80.locky.api.LockyConf;
 
 /**
  * @author Olivier Perez

@@ -1,4 +1,4 @@
-package fr.o80.locky.service;
+package fr.o80.locky.internal.service;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -12,7 +12,7 @@ import javax.inject.Singleton;
 @Singleton
 public class LPref {
 
-    private static final String SHAREDPREF_NAME = "fr.o80.locky.service.LPref";
+    private static final String SHAREDPREF_NAME = "fr.o80.locky.internal.service.LPref";
 
     private static final String KEY_PASSWORD = "A";
 

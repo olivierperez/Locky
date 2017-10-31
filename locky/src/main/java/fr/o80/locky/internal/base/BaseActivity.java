@@ -1,4 +1,4 @@
-package fr.o80.locky.base;
+package fr.o80.locky.internal.base;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

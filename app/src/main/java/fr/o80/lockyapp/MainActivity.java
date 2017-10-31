@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import fr.o80.locky.service.LockyConf;
+import fr.o80.locky.api.LockyConf;
 
 public class MainActivity extends AppCompatActivity {
 

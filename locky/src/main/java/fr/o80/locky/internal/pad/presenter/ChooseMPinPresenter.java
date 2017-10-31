@@ -1,10 +1,10 @@
-package fr.o80.locky.pad.presenter;
+package fr.o80.locky.internal.pad.presenter;
 
 import javax.inject.Inject;
 
-import fr.o80.locky.base.Presenter;
-import fr.o80.locky.component.Pad;
-import fr.o80.locky.service.LockyConf;
+import fr.o80.locky.internal.base.Presenter;
+import fr.o80.locky.internal.component.Pad;
+import fr.o80.locky.api.LockyConf;
 
 /**
  * @author Olivier Perez

@@ -17,7 +17,7 @@ Locky Android helps you to protect your Android applications with a pad screen.
 ### Configure Locky
 
 ```java
-import fr.o80.locky.service.LockyConf;
+import fr.o80.locky.api.LockyConf;
 
 public class DemoApplication extends Application {
 
@@ -39,7 +39,7 @@ public class DemoApplication extends Application {
 ### Check if user is locked
 
 ```java
-import fr.o80.locky.service.LockyConf;
+import fr.o80.locky.api.LockyConf;
 
 public class MainActivity extends AppCompatActivity {
 

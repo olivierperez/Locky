@@ -1,13 +1,14 @@
-package fr.o80.locky.service;
+package fr.o80.locky.api;
 
 import android.content.Context;
 import android.support.annotation.ColorRes;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.StringRes;
 
-import fr.o80.locky.dagger.DaggerLockyComponent;
-import fr.o80.locky.dagger.LockyComponent;
-import fr.o80.locky.dagger.LockyModule;
+import fr.o80.locky.internal.dagger.DaggerLockyComponent;
+import fr.o80.locky.internal.dagger.LockyComponent;
+import fr.o80.locky.internal.dagger.LockyModule;
+import fr.o80.locky.internal.service.Locky;
 
 /**
  * @author Olivier Perez

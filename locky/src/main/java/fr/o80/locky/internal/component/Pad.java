@@ -1,4 +1,4 @@
-package fr.o80.locky.component;
+package fr.o80.locky.internal.component;
 
 
 import android.animation.Animator;
@@ -18,7 +18,6 @@ import android.view.View;
 import android.view.animation.CycleInterpolator;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.lang.ref.WeakReference;
@@ -31,7 +30,7 @@ import butterknife.OnClick;
 import butterknife.OnLongClick;
 import fr.o80.locky.R;
 import fr.o80.locky.R2;
-import fr.o80.locky.service.LockyConf;
+import fr.o80.locky.api.LockyConf;
 
 /**
  * @author Olivier Perez

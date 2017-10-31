@@ -1,4 +1,4 @@
-package fr.o80.locky.dagger;
+package fr.o80.locky.internal.dagger;
 
 import android.content.Context;
 
@@ -6,7 +6,7 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
-import fr.o80.locky.service.LockyConf;
+import fr.o80.locky.api.LockyConf;
 
 /**
  * @author Olivier Perez
