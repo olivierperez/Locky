@@ -40,8 +40,13 @@ android {
 dependencies {
     implementation project(path: ':locky')
 
+    // Support
     implementation libs.compatV7
     implementation libs.constraintLayout
 
+    // Tools
+    implementation libs.timber
+
+    // Tests
     testImplementation libs.junit
 }

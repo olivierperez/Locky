@@ -9,12 +9,12 @@ import javax.inject.Inject;
 import butterknife.BindView;
 import fr.o80.locky.R;
 import fr.o80.locky.R2;
+import fr.o80.locky.api.LockyConf;
 import fr.o80.locky.internal.base.BaseFragment;
 import fr.o80.locky.internal.base.Presenter;
 import fr.o80.locky.internal.component.Pad;
 import fr.o80.locky.internal.pad.presenter.CheckMPinPresenter;
 import fr.o80.locky.internal.pad.presenter.CheckMPinView;
-import fr.o80.locky.api.LockyConf;
 
 /**
  * @author Olivier Perez
@@ -54,6 +54,8 @@ public class CheckMPinFragment extends BaseFragment implements CheckMPinView {
         super.onViewCreated(view, savedInstanceState);
         pad.setListener(presenter);
         view.setBackgroundResource(conf.getBackgroundRes());
+
+        presenter.init();
     }
 
     @Override
