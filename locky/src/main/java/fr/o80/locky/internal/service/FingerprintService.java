@@ -29,7 +29,7 @@ import fr.o80.locky.api.LockyConf;
  */
 public class FingerprintService {
 
-    private static final String KEY_NAME = "KEY_NAME";
+    private static final String KEYSTORE_ALIAS = "LFK";
 
     private final Context context;
     private final KeyguardManager keyguardManager;
@@ -63,7 +63,7 @@ public class FingerprintService {
         try {
             keyStore.load(null);
             keyGenerator.init(new
-                    KeyGenParameterSpec.Builder(KEY_NAME, KeyProperties.PURPOSE_ENCRYPT | KeyProperties.PURPOSE_DECRYPT)
+                    KeyGenParameterSpec.Builder(KEYSTORE_ALIAS, KeyProperties.PURPOSE_ENCRYPT | KeyProperties.PURPOSE_DECRYPT)
                     .setBlockModes(KeyProperties.BLOCK_MODE_CBC)
                     .setUserAuthenticationRequired(true)
                     .setEncryptionPaddings(KeyProperties.ENCRYPTION_PADDING_PKCS7)
@@ -78,7 +78,7 @@ public class FingerprintService {
     public boolean cipherInit() throws FingerprintException {
         try {
             keyStore.load(null);
-            SecretKey key = (SecretKey) keyStore.getKey(KEY_NAME, null);
+            SecretKey key = (SecretKey) keyStore.getKey(KEYSTORE_ALIAS, null);
             cipher.init(Cipher.ENCRYPT_MODE, key);
             cryptoObject = new FingerprintManager.CryptoObject(cipher);
             return true;
