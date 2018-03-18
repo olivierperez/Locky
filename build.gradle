@@ -9,7 +9,7 @@ buildscript {
         maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.0'
+        classpath 'com.android.tools.build:gradle:3.1.0-rc01'
         classpath 'com.jakewharton:butterknife-gradle-plugin:9.0.0-SNAPSHOT'
         classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
     }
@@ -31,15 +31,15 @@ ext {
     versionCode = 3
     versionName = "2.0"
 
-    commonCompileSdkVersion = 26
-    commonBuildToolsVersion = "26.0.2"
+    commonCompileSdkVersion = 27
+    commonBuildToolsVersion = "27.0.3"
     commonMinSdkVersion = 16
-    commonTargetSdkVersion = 26
+    commonTargetSdkVersion = 27
 
     version = [
-            support    : '27.0.0',
-            butterKnife: '9.0.0-SNAPSHOT',
-            dagger     : '2.11'
+            support    : '27.0.2',
+            butterKnife: '8.8.1',
+            dagger     : '2.15'
     ]
     libs = [
             // Support
