@@ -41,10 +41,14 @@ dependencies {
     implementation libs.butterKnife
     annotationProcessor libs.butterKnifeProcessor
 
-    testImplementation libs.junit
-
     // Dependency injection
     implementation libs.dagger
     annotationProcessor libs.daggerProcessor
     compileOnly libs.jsr250
+
+    // Tools
+    implementation libs.timber
+
+    // Tests
+    testImplementation libs.junit
 }

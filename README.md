@@ -2,15 +2,19 @@
 
 Locky Android helps you to protect your Android applications with a pad screen.
 
-- At the first use, the user will choose a Pin as long as he want.
-- All the following starts will be locked by the pad screen, the user's data will be protected.
-
 <a href="https://github.com/olivierperez/Locky/raw/master/art/screenshot/Locky_choose_code.png">
     <img src="https://github.com/olivierperez/Locky/raw/master/art/screenshot/Locky_choose_code.png" width="200"/>
 </a>
 <a href="https://github.com/olivierperez/Locky/raw/master/art/screenshot/Locky_unlock_pad.png">
     <img src="https://github.com/olivierperez/Locky/raw/master/art/screenshot/Locky_unlock_pad.png" width="200"/>
 </a>
+
+## Features
+
+
+- At the first use, the user will choose a Pin as long as he want.
+- All the following starts will be locked by the pad screen.
+- The pad screen will wait for the right password or a fingerprint.
 
 ## Usage
 

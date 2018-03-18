@@ -12,7 +12,7 @@ import fr.o80.locky.internal.service.Locky;
 /**
  * @author Olivier Perez
  */
-@Component(modules = LockyModule.class)
+@Component(modules = {LockyModule.class, FingerprintModule.class})
 @Singleton
 public interface LockyComponent {
     Locky locky();
