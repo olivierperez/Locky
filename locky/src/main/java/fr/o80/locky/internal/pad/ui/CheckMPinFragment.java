@@ -59,6 +59,11 @@ public class CheckMPinFragment extends BaseFragment implements CheckMPinView {
     }
 
     @Override
+    public void showFingerprint() {
+        pad.showFingerprint();
+    }
+
+    @Override
     public void confirm() {
         ((PadActivity) getActivity()).confirmCheck();
     }

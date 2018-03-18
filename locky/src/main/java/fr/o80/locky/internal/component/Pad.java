@@ -40,6 +40,9 @@ public class Pad extends ConstraintLayout {
     @Inject
     protected LockyConf conf;
 
+    @BindView(R2.id.fingerprint)
+    protected TintableImageView fingerprint;
+
     @BindView(R2.id.pad_title)
     protected TextView titleTextView;
 
@@ -75,6 +78,7 @@ public class Pad extends ConstraintLayout {
 
     private void setTextColor(ColorStateList colorStateList) {
         if (colorStateList != null) {
+            fingerprint.setTint(colorStateList);
             titleTextView.setTextColor(colorStateList);
             passwordTextView.setTextColor(colorStateList);
             setTextColor(R.id.pad_0, colorStateList);
@@ -164,6 +168,10 @@ public class Pad extends ConstraintLayout {
     public void setTitle(@StringRes int titleRes) {
         titleTextView.setText(titleRes);
         titleTextView.setVisibility(View.VISIBLE);
+    }
+
+    public void showFingerprint() {
+        fingerprint.setVisibility(View.VISIBLE);
     }
 
     public interface PadListener {

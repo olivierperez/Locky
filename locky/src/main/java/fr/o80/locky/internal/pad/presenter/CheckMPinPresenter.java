@@ -45,6 +45,7 @@ public class CheckMPinPresenter extends Presenter<CheckMPinView> implements Pad.
                         view.confirm();
                     }
                 });
+                view.showFingerprint();
             } catch (FingerprintService.FingerprintException e) {
                 e.printStackTrace();
             }
