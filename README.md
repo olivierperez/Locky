@@ -107,7 +107,7 @@ and the dependency in the `build.gradle` of the module: [![](https://jitpack.io/
 
 ```gradle
 dependencies {
-    compile 'com.github.olivierperez:locky:1.2:release@aar'
+    compile 'com.github.olivierperez:locky:3.0:release@aar'
 }
 ```
 
